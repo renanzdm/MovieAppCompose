@@ -21,7 +21,7 @@ fun MovieDto.toMovieEntity(): MovieEntity {
                 originalTitle = dto.originalTitle,
                 overview = dto.overview,
                 popularity = dto.popularity,
-                posterPath = dto.posterPath,
+                posterPath ="https://image.tmdb.org/t/p/w500/${dto.posterPath}",
                 releaseDate = LocalDate.parse(dto.releaseDate),
                 title = dto.title,
                 voteAverage = dto.voteAverage,

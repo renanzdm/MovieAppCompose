@@ -12,7 +12,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import br.renan.movieappdb.presenter.home.HomeViewModel
 import br.renan.movieappdb.presenter.home.MainScreen
-import br.renan.movieappdb.presenter.home.MusicScreen
 import br.renan.movieappdb.presenter.theme.MovieAppDbTheme
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

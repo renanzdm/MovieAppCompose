@@ -71,11 +71,11 @@ dependencies {
     androidTestImplementation ("androidx.test.ext:junit:1.1.4")
     androidTestImplementation ("androidx.test.espresso:espresso-core:3.5.0")
     androidTestImplementation ("androidx.compose.ui:ui-test-junit4:1.3.2")
+    implementation("io.coil-kt:coil-compose:2.2.2")
     debugImplementation ("androidx.compose.ui:ui-tooling:1.3.2")
     debugImplementation ("androidx.compose.ui:ui-test-manifest:1.3.2")
-    implementation ("com.google.accompanist:accompanist-pager:0.28.0")
-    implementation ("com.google.accompanist:accompanist-pager-indicators:0.28.0")
-    implementation ("androidx.compose.ui:ui-util:1.3.2")
+
+
 
 // Pager Indicators
 
