@@ -1,7 +1,6 @@
 package br.renan.movieappdb.presenter.utils
 
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawWithContent
@@ -47,3 +46,4 @@ fun AutoResizeText(
 
 
 }
+

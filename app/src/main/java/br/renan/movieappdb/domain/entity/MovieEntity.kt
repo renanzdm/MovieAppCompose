@@ -4,6 +4,5 @@ data class MovieEntity(
     var page:Int,
     var totalResults: Int,
     var totalPages: Int,
-    var moviesData: List<MovieDataEntity>
-
+    var moviesData: MutableList<MovieDataEntity>
 )

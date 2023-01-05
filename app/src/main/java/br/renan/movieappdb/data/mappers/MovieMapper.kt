@@ -27,7 +27,7 @@ fun MovieDto.toMovieEntity(): MovieEntity {
                 voteAverage = dto.voteAverage,
                 voteCount = dto.voteCount
             )
-        }
+        }.toMutableList()
     )
 
 

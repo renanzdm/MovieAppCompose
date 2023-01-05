@@ -49,6 +49,7 @@ dependencies {
     val koinversion = "3.3.0"
     val koinandroidversion = "3.3.1"
     val koinandroidcomposeversion = "3.4.0"
+    val paging_version = "3.1.1"
 
     implementation ("io.insert-koin:koin-core:$koinversion")
     implementation ("io.insert-koin:koin-android:$koinandroidversion")
@@ -72,12 +73,17 @@ dependencies {
     androidTestImplementation ("androidx.test.espresso:espresso-core:3.5.0")
     androidTestImplementation ("androidx.compose.ui:ui-test-junit4:1.3.2")
     implementation("io.coil-kt:coil-compose:2.2.2")
+//    implementation("androidx.paging:paging-runtime:$paging_version")
+//    implementation("androidx.paging:paging-compose:1.0.0-alpha17")
+    // Optional - Integration with LiveData
+
+
     debugImplementation ("androidx.compose.ui:ui-tooling:1.3.2")
     debugImplementation ("androidx.compose.ui:ui-test-manifest:1.3.2")
 
 
 
-// Pager Indicators
+
 
 
 }
