@@ -6,7 +6,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.*
 import br.renan.movieappdb.domain.entity.MovieDataEntity
 import br.renan.movieappdb.domain.repository.MovieRepository
-import br.renan.movieappdb.domain.util.Resource
+import br.renan.movieappdb.presenter.utils.Resource
 import kotlinx.coroutines.launch
 
 class HomeViewModel(private val movieRepository: MovieRepository) : ViewModel() {
