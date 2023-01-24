@@ -1,4 +1,4 @@
-package br.renan.movieappdb.domain.entity
+package br.renan.movieappdb.domain.entity.movie
 
 data class MovieEntity(
     var page:Int,

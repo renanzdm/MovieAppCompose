@@ -1,4 +1,4 @@
-package br.renan.movieappdb.domain.entity
+package br.renan.movieappdb.domain.entity.movie
 
 import java.time.LocalDate
 

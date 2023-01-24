@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
     kotlin("android")
+    
 }
 
 android {
@@ -49,6 +51,7 @@ android {
 
 dependencies {
     
+    implementation("androidx.core:core-ktx:+")
     val koinversion = "3.3.0"
     val koinandroidversion = "3.3.1"
     val koinandroidcomposeversion = "3.4.0"
@@ -80,9 +83,12 @@ dependencies {
 //    implementation("androidx.paging:paging-compose:1.0.0-alpha17")
     implementation("androidx.compose.material3:material3:1.1.0-alpha03")
     
+    implementation("androidx.navigation:navigation-compose:2.5.3")
     
     debugImplementation("androidx.compose.ui:ui-tooling:1.3.2")
     debugImplementation("androidx.compose.ui:ui-test-manifest:1.3.2")
+    
+    
     
     
 }

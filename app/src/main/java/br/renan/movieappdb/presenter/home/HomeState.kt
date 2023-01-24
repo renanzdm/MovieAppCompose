@@ -1,9 +1,10 @@
 package br.renan.movieappdb.presenter.home
 
-import br.renan.movieappdb.domain.entity.MovieEntity
+import br.renan.movieappdb.domain.entity.movie.MovieDetailsEntity
+import br.renan.movieappdb.domain.entity.movie.MovieEntity
 
 data class HomeState(
-    val videoEntity: MovieEntity?=null,
+    val movieEntity: MovieEntity?=null,
     val isLoading: Boolean = false,
-    val error: String? = null
+    val error: String? = null,
 )

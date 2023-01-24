@@ -1,43 +1,41 @@
-package br.renan.movieappdb.presenter.home
+package br.renan.movieappdb.presenter.home.moviedetails
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import androidx.lifecycle.*
-import br.renan.movieappdb.domain.entity.movie.MovieDataEntity
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import br.renan.movieappdb.domain.repository.MovieRepository
 import br.renan.movieappdb.presenter.utils.Resource
 import kotlinx.coroutines.launch
 
-class HomeViewModel(private val movieRepository: MovieRepository) : ViewModel() {
-    var state by mutableStateOf(HomeState())
-        private set
-    
+class MovieDetailsViewModel(private val movieRepository: MovieRepository, movieId: String?) : ViewModel() {
+  var state by mutableStateOf(MovieDetailsState())
     init {
-        onStart()
+        onStart(movieId)
     }
     
-    
-    private fun onStart() {
-        getPopularMovies(1)
+    private fun onStart(movieId: String?) {
+        if (movieId != null) {
+            getMovieDetails(movieId = movieId.toInt())
+        }
     }
     
-    
-    fun getPopularMovies(page: Int) {
-        val amountList: MutableList<MovieDataEntity> =
-            state.movieEntity?.moviesData ?: mutableListOf()
+    private fun getMovieDetails(movieId: Int) {
         viewModelScope.launch {
             state = state.copy(
                 isLoading = true, error = null
             )
-            movieRepository.getPopularMovies(page).let {
+            movieRepository.getMovieDetails(
+                movieId = movieId,
+                customParams = listOf("images,credits")
+            ).let {
                 state = when (it) {
                     is Resource.Success -> {
-                        if (it.data?.moviesData != null) amountList.addAll(it.data.moviesData)
                         state.copy(
                             isLoading = false,
                             error = null,
-                            movieEntity = it.data?.copy(moviesData = amountList)
+                            movieDetailsEntity = it.data
                         )
                     }
                     is Resource.Error -> {
@@ -47,7 +45,6 @@ class HomeViewModel(private val movieRepository: MovieRepository) : ViewModel() 
                         )
                     }
                 }
-                
             }
         }
     }
