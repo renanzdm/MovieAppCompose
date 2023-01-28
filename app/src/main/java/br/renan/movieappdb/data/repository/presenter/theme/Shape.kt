@@ -1,4 +1,4 @@
-package br.renan.movieappdb.presenter.theme
+package br.renan.movieappdb.data.repository.presenter.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes

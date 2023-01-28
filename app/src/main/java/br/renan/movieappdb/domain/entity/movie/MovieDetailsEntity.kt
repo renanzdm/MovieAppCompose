@@ -1,5 +1,7 @@
 package br.renan.movieappdb.domain.entity.movie
 
+import java.time.LocalDate
+
 data class MovieDetailsEntity(
     var adult: Boolean,
     var backdropPath : String,
@@ -12,7 +14,7 @@ data class MovieDetailsEntity(
     var overview:String,
     var popularity: Double,
     var posterPath:String,
-    var releaseDate : String,
+    var releaseDate : LocalDate,
     var status:String,
     var title:String,
     var video:Boolean,

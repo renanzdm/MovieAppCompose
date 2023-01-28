@@ -1,4 +1,4 @@
-package br.renan.movieappdb.presenter.home
+package br.renan.movieappdb.data.repository.presenter.home
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -21,9 +21,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import br.renan.movieappdb.domain.entity.movie.MovieDataEntity
-import br.renan.movieappdb.presenter.navigation.AppRoutes
-import br.renan.movieappdb.presenter.utils.IndicatorCircularRate
-import br.renan.movieappdb.presenter.utils.OnBottomReached
+import br.renan.movieappdb.data.repository.presenter.navigation.AppRoutes
+import br.renan.movieappdb.data.repository.presenter.utils.IndicatorCircularRate
+import br.renan.movieappdb.data.repository.presenter.utils.OnBottomReached
 import coil.compose.AsyncImage
 import org.koin.androidx.compose.koinViewModel
 import java.time.format.DateTimeFormatter
@@ -68,7 +68,7 @@ fun HomeScreen(
 
 
 @Composable
-fun ListMoviesPopular(viewModel: HomeViewModel,navController: NavHostController) {
+fun ListMoviesPopular(viewModel: HomeViewModel, navController: NavHostController) {
     val listState = rememberLazyListState()
     var page by remember {
         mutableStateOf(1)

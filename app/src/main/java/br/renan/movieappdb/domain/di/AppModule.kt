@@ -3,8 +3,8 @@ package br.renan.movieappdb.domain.di
 import br.renan.movieappdb.data.remote.api.MovieAppApi
 import br.renan.movieappdb.data.repository.MovieRepositoryImpl
 import br.renan.movieappdb.domain.repository.MovieRepository
-import br.renan.movieappdb.presenter.home.HomeViewModel
-import br.renan.movieappdb.presenter.home.moviedetails.MovieDetailsViewModel
+import br.renan.movieappdb.data.repository.presenter.home.HomeViewModel
+import br.renan.movieappdb.data.repository.presenter.home.moviedetails.MovieDetailsViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.androidx.viewmodel.dsl.viewModel

@@ -7,7 +7,7 @@ import br.renan.movieappdb.data.remote.api.MovieAppApi
 import br.renan.movieappdb.domain.entity.movie.MovieDetailsEntity
 import br.renan.movieappdb.domain.entity.movie.MovieEntity
 import br.renan.movieappdb.domain.repository.MovieRepository
-import br.renan.movieappdb.presenter.utils.Resource
+import br.renan.movieappdb.data.repository.presenter.utils.Resource
 
 class MovieRepositoryImpl(private val movieAppApi: MovieAppApi) : MovieRepository {
     override suspend fun getPopularMovies(page: Int): Resource<MovieEntity> {

@@ -38,7 +38,7 @@ fun MovieDetailsDto.toMovieDetailsEntity(): MovieDetailsEntity {
         title = title,
         voteCount = voteCount,
         voteAverage = voteAverage,
-        releaseDate = releaseDate,
+        releaseDate =  LocalDate.parse(releaseDate),
         posterPath = "https://image.tmdb.org/t/p/w500/${posterPath}",
         popularity = popularity,
         overview = overview,
