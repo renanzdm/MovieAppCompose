@@ -1,4 +1,4 @@
-package br.renan.movieappdb.data.repository.presenter.home.moviedetails
+package br.renan.movieappdb.presenter.home.moviedetails
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -33,27 +33,7 @@ fun MovieDetailsScreen(
 ) {
     Scaffold(
         topBar = {
-            TopAppBar(title = {
-                movieDetailsViewModel.state.movieDetailsEntity?.let {
-                    Text(
-                        text = it.title
-                    )
-                }
-            }, navigationIcon = {
-                IconButton(content = {
-                    Icon(
-                        Icons.Filled.ArrowBack, "", tint = Color.White
-                    )
-                }, onClick = {
-                    navHostController.previousBackStackEntry.let {
-                        navHostController.navigateUp()
-                    }
-                }
-                
-                )
-            }
-            
-            )
+            MyAppBar(movieDetailsViewModel, navHostController)
         },
     ) { padding ->
         Box(modifier = Modifier.fillMaxSize()) {
@@ -77,23 +57,48 @@ fun MovieDetailsScreen(
 }
 
 @Composable
+private fun MyAppBar(
+    movieDetailsViewModel: MovieDetailsViewModel,
+    navHostController: NavHostController
+) {
+    TopAppBar(title = {
+        movieDetailsViewModel.state.movieDetailsEntity?.let {
+            Text(
+                text = it.title
+            )
+        }
+    }, navigationIcon = {
+        IconButton(content = {
+            Icon(
+                Icons.Filled.ArrowBack, "", tint = Color.White
+            )
+        }, onClick = {
+            navHostController.previousBackStackEntry.let {
+                navHostController.navigateUp()
+            }
+        }
+        
+        )
+    }
+    
+    )
+}
+
+@Composable
 fun ContentScreen(state: MovieDetailsState) {
     Column(modifier = Modifier.padding(horizontal = 16.dp)) {
         Spacer(modifier = Modifier.height(8.dp))
         state.movieDetailsEntity?.let {
-            Row {
-                AsyncImage(
-                    model = it.posterPath,
-                    contentDescription = it.originalTitle,
-                    contentScale = ContentScale.FillBounds,
-                    modifier = Modifier
-                        .height(250.dp)
-                        .width(200.dp)
-                        .padding(end = 8.dp)
-                        .clip(RoundedCornerShape(12.dp)),
-                )
-                Column {
-                    Text(
+            AsyncImage(
+                model = it.posterPath,
+                contentDescription = it.originalTitle,
+                contentScale = ContentScale.Crop,
+                modifier = Modifier
+                    .height(300.dp)
+                    .padding(end = 8.dp)
+                    .clip(RoundedCornerShape(12.dp)),
+            )
+                   Text(
                         text = it.title,
                         style = TextStyle(fontSize = 32.sp, fontWeight = FontWeight.Bold)
                     )
@@ -108,11 +113,7 @@ fun ContentScreen(state: MovieDetailsState) {
                         )
                     )
                     Text(text = it.overview)
-                    
-                }
-                
-            }
-            LazyRow(content = {
+            LazyRow {
                 items(items = state.movieDetailsEntity.genres) {
                     Box(
                         modifier = Modifier
@@ -120,7 +121,7 @@ fun ContentScreen(state: MovieDetailsState) {
                             .padding(4.dp)
                             .clip(RoundedCornerShape(12.dp))
                             .background(MaterialTheme.colors.primary)
-                    
+        
                     ) {
                         Text(
                             modifier = Modifier
@@ -133,8 +134,8 @@ fun ContentScreen(state: MovieDetailsState) {
                         )
                     }
                 }
-            })
-            
+            }
+    
         }
     }
 }

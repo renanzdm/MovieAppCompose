@@ -1,4 +1,4 @@
-package br.renan.movieappdb.data.repository.presenter.navigation
+package br.renan.movieappdb.presenter.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -8,8 +8,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
 import androidx.navigation.compose.rememberNavController
-import br.renan.movieappdb.data.repository.presenter.home.HomeScreen
-import br.renan.movieappdb.data.repository.presenter.home.moviedetails.MovieDetailsScreen
+import br.renan.movieappdb.presenter.home.HomeScreen
+import br.renan.movieappdb.presenter.home.moviedetails.MovieDetailsScreen
 
 
 sealed class AppRoutes {

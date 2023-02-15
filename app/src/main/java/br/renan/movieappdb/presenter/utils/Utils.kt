@@ -1,4 +1,4 @@
-package br.renan.movieappdb.data.repository.presenter.utils
+package br.renan.movieappdb.presenter.utils
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -13,11 +13,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.drawWithContent
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.isUnspecified
-import androidx.compose.ui.unit.sp
 
 
 @Composable
@@ -70,10 +68,8 @@ fun LazyListState.OnBottomReached(
             lastVisibleItem.index == layoutInfo.totalItemsCount - 1
         }
     }
-    
     LaunchedEffect(shouldLoadMore) {
         snapshotFlow { shouldLoadMore.value }.collect {
-            // if should load more, then invoke loadMore
             if (it) loadMore()
         }
     }
@@ -83,16 +79,14 @@ fun LazyListState.OnBottomReached(
 fun IndicatorCircularRate(value: Double) {
     val formattedValue: String = String.format("%.0f", (value * 100))
     Box(modifier = Modifier
-        .height(35.dp)
-        .width(35.dp)
+        .height(40.dp)
+        .width(40.dp)
         .clip(RoundedCornerShape(100.dp))
         .background(Color.Black)) {
         Text(
             modifier = Modifier.align(Alignment.Center),
             text = "$formattedValue%",
             color = Color.White,
-            fontSize = 16.sp,
-            fontWeight = FontWeight.Bold,
         )
         CircularProgressIndicator(
             progress = value.toFloat(),
@@ -108,7 +102,7 @@ fun IndicatorCircularRate(value: Double) {
 @Composable
 @Preview
 fun PreviewIndicator(){
-   IndicatorCircularRate(value = 0.49)
+   IndicatorCircularRate(value = 1.00)
    
    
    

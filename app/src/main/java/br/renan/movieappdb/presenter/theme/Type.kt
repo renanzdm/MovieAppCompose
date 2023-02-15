@@ -1,4 +1,4 @@
-package br.renan.movieappdb.data.repository.presenter.theme
+package br.renan.movieappdb.presenter.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

@@ -1,4 +1,4 @@
-package br.renan.movieappdb.data.repository.presenter.home.moviedetails
+package br.renan.movieappdb.presenter.home.moviedetails
 
 import br.renan.movieappdb.domain.entity.movie.MovieDetailsEntity
 

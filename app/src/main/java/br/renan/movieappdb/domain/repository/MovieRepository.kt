@@ -2,7 +2,7 @@ package br.renan.movieappdb.domain.repository
 
 import br.renan.movieappdb.domain.entity.movie.MovieDetailsEntity
 import br.renan.movieappdb.domain.entity.movie.MovieEntity
-import br.renan.movieappdb.data.repository.presenter.utils.Resource
+import br.renan.movieappdb.presenter.utils.Resource
 
 interface MovieRepository {
 

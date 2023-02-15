@@ -1,4 +1,4 @@
-package br.renan.movieappdb.data.repository.presenter.home.moviedetails
+package br.renan.movieappdb.presenter.home.moviedetails
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -6,7 +6,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import br.renan.movieappdb.domain.repository.MovieRepository
-import br.renan.movieappdb.data.repository.presenter.utils.Resource
+import br.renan.movieappdb.presenter.utils.Resource
 import kotlinx.coroutines.launch
 
 class MovieDetailsViewModel(private val movieRepository: MovieRepository, movieId: String?) : ViewModel() {
